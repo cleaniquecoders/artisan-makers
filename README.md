@@ -7,7 +7,7 @@ This is a extended artisan make command.
 1. In order to install `cleaniquecoders/artisan-makers` in your Laravel project, just run the *composer require* command from your terminal:
 
 ```
-composer require cleanique-coders/artisan-makers
+composer require cleaniquecoders/artisan-makers
 ```
 
 2. Then in your `config/app.php` add the following to the providers array:
