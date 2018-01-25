@@ -48,7 +48,7 @@ This will create models under `app/Models` directory instead of `app` directory 
 
 ```php
 protected $commands = [
-    \NasrulHazim\ArtisanMakers\Console\Commands\MakeModelCommand::class,
+    \CleaniqueCoders\ArtisanMakers\Console\Commands\MakeModelCommand::class,
 ];
 ```	
 
