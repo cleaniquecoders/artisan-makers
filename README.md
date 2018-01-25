@@ -1,5 +1,7 @@
 ## About Your Package
 
+[![Build Status](https://travis-ci.org/cleaniquecoders/artisan-makers.svg?branch=master)](https://travis-ci.org/cleaniquecoders/artisan-makers) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/artisan-makers/version)](https://packagist.org/packages/cleaniquecoders/artisan-makers) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/artisan-makers/downloads)](https://packagist.org/packages/cleaniquecoders/artisan-makers) [![License](https://poser.pugx.org/cleaniquecoders/artisan-makers/license)](https://packagist.org/packages/cleaniquecoders/artisan-makers)
+
 This is a extended artisan make command.
 
 ## Installation
