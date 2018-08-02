@@ -3,7 +3,7 @@
 namespace CleaniqueCoders\ArtisanMakers\Contracts;
 
 /**
- * All Presenters should implement this contract
+ * All Presenters should implement this contract.
  */
 interface PresenterContract
 {

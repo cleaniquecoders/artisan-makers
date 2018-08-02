@@ -24,7 +24,7 @@ class ArtisanCommandTest extends TestCase
 
         foreach ($commands as $command) {
             $prefix  = 'TestArtisanMaker';
-            $name    = ($command == 'Model' ? 'Models/' . $prefix . $command : $prefix . $command);
+            $name    = ('Model' == $command ? 'Models/' . $prefix . $command : $prefix . $command);
             $dir     = app_path(Str::plural($command));
             $path    = $dir . '/' . $prefix . $command . '.php';
             $message = $command . ' created successfully.';
@@ -38,7 +38,7 @@ class ArtisanCommandTest extends TestCase
 
             $this->destroy($dir);
 
-            if ($command == 'Observer') {
+            if ('Observer' == $command) {
                 $this->destroy(app_path('Providers'));
             }
 

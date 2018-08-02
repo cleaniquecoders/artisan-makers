@@ -37,50 +37,6 @@ class MakeObserverCommand extends GeneratorCommand
     protected $type = 'Observer';
 
     /**
-     * Get the stub file for the generator.
-     *
-     * @return string
-     */
-    protected function getStub()
-    {
-        return __DIR__ . '/stubs/observer.stub';
-    }
-
-    /**
-     * Get the default namespace for the class.
-     *
-     * @param  string  $rootNamespace
-     * @return string
-     */
-    protected function getDefaultNamespace($rootNamespace)
-    {
-        return $rootNamespace . '\\Observers';
-    }
-
-    /**
-     * Build the class with the given name.
-     *
-     * Remove the base controller import if we are already in base namespace.
-     *
-     * @param  string  $name
-     * @return string
-     */
-    protected function buildClass($name)
-    {
-        if ($this->option('model')) {
-            $replace = $obvserverReplace = [];
-
-            $replace = $obvserverReplace = $this->buildModelReplacements($replace);
-
-            return str_replace(
-                array_keys($replace), array_values($replace), parent::buildClass($name)
-            );
-        } else {
-            return parent::buildClass($name);
-        }
-    }
-
-    /**
      * Execute the console command.
      *
      * @return bool|null
@@ -97,12 +53,13 @@ class MakeObserverCommand extends GeneratorCommand
     }
 
     /**
-     * Register Observer Service Provider
+     * Register Observer Service Provider.
+     *
      * @void
      */
     public function registerObserverServiceProvider()
     {
-        if (!$this->files->exists(app_path('Providers/ObserverServiceProvider.php'))) {
+        if (! $this->files->exists(app_path('Providers/ObserverServiceProvider.php'))) {
             $this->call('make:provider', [
                 'name' => 'ObserverServiceProvider',
             ]);
@@ -110,6 +67,52 @@ class MakeObserverCommand extends GeneratorCommand
             $this->info('Do run php artisan config:cache to make sure ObserverServiceProvider is loaded.');
         } else {
             $this->info(app_path('Providers/ObserverServiceProvider.php') . ' already exist.');
+        }
+    }
+
+    /**
+     * Get the stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getStub()
+    {
+        return __DIR__ . '/stubs/observer.stub';
+    }
+
+    /**
+     * Get the default namespace for the class.
+     *
+     * @param string $rootNamespace
+     *
+     * @return string
+     */
+    protected function getDefaultNamespace($rootNamespace)
+    {
+        return $rootNamespace . '\\Observers';
+    }
+
+    /**
+     * Build the class with the given name.
+     *
+     * Remove the base controller import if we are already in base namespace.
+     *
+     * @param string $name
+     *
+     * @return string
+     */
+    protected function buildClass($name)
+    {
+        if ($this->option('model')) {
+            $replace = $obvserverReplace = [];
+
+            $replace = $obvserverReplace = $this->buildModelReplacements($replace);
+
+            return str_replace(
+                array_keys($replace), array_values($replace), parent::buildClass($name)
+            );
+        } else {
+            return parent::buildClass($name);
         }
     }
 

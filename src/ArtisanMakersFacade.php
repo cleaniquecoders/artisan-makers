@@ -2,7 +2,7 @@
 
 namespace CleaniqueCoders\ArtisanMakers;
 
-/**
+/*
  * This file is part of artisan-makers
  *
  * @license MIT
