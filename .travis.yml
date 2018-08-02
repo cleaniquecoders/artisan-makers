@@ -1,9 +1,15 @@
 language: php
 
 php:
-  - 7.0
   - 7.1
   - 7.2
+
+env:
+  - APP_ENV=testing
+
+cache:
+  directories:
+    - vendor
 
 before_script:
   - travis_retry composer self-update
