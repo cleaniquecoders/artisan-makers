@@ -32,7 +32,7 @@ class ArtisanCommandTest extends TestCase
 
             Artisan::call($cmd, ['name' => $name]);
             $output = Artisan::output();
-            $this->assertContains($message, $output);
+            $this->assertStringContainsString($message, $output);
             $this->assertFileExists($dir);
             $this->assertFileExists($path);
 
